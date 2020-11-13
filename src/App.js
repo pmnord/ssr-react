@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import './styles.css';
 
 const App = () => {
   const [cookieCount, setCookieCount] = useState(0);
@@ -43,24 +44,16 @@ const App = () => {
     setCookieCount(cookieCount + 1);
   };
 
-  const cookieStyles = {
-    cursor: "pointer",
-    fontSize: "5rem",
-    background: "none",
-    border: "none",
-    outline: "none",
-  };
-
   return (
     <main className="game-board">
-      <div className="score">
+      <h1 className="score">
         Cookies: <span className="current-score">{cookieCount}</span>
-      </div>
-      <div className="rank">Rank: {rank}</div>
-      <button className="btn" onClick={addCookie} style={cookieStyles}>
+      </h1>
+      <h2 className="rank">Rank: {rank}</h2>
+      <button className="btn" onClick={addCookie}>
         🍪
       </button>
-      <div className="cookies">{cookies}</div>
+      <div className="cookies" style={{height: '5rem'}}>{cookies}</div>
     </main>
   );
 };

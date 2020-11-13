@@ -15,6 +15,13 @@ module.exports = {
         test: /\.js$/,
         use: "babel-loader",
       },
+      {
+        test: /\.css$/,
+        use: [
+          {loader: "file-loader"},
+          {loader: "css-loader"},
+        ]
+      }
     ],
   },
 };
